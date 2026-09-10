@@ -834,6 +834,7 @@ body.cursor-active .cursor-dot, body.cursor-active .cursor-ring{ opacity:1; }
    ========================================================================== */
 @media (max-width: 1080px){
   .services-grid{ grid-template-columns: repeat(2,1fr); }
+  .service-card:nth-child(7):last-child{ grid-column: auto; }
   .why-grid{ grid-template-columns: repeat(2,1fr); }
   .process-steps{ grid-template-columns: repeat(2,1fr); row-gap: 40px; }
   .process-line{ display:none; }
