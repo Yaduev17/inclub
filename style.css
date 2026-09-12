@@ -637,8 +637,11 @@ body.cursor-active .cursor-dot, body.cursor-active .cursor-ring{ opacity:1; }
   display:block; position:relative; overflow:hidden;
   aspect-ratio: 4/3; cursor:pointer;
   background: var(--black);
-  transition: opacity .3s var(--ease);
+  border: 1px solid var(--gray-300);
+  box-shadow: 0 20px 40px rgba(0,0,0,.08);
+  transition: opacity .3s var(--ease), box-shadow .3s var(--ease);
 }
+.portfolio-item:hover{ box-shadow: 0 24px 48px rgba(0,0,0,.14); }
 .portfolio-item .play-btn{ pointer-events:none; z-index:1; }
 .portfolio-item.hidden{ display:none; }
 .portfolio-item img{
