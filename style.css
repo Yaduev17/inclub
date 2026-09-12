@@ -284,9 +284,14 @@ body.cursor-active .cursor-dot, body.cursor-active .cursor-ring{ opacity:1; }
   background: var(--black);
 }
 .hero-bg{
-  position:absolute; inset:0;
+  position:absolute; inset:0; overflow:hidden;
   background-size: cover; background-position: 5% 32%;
   z-index: 0;
+}
+.hero-bg-video{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit: cover; object-position: 5% 32%;
 }
 .hero-bg::after{
   content:''; position:absolute; inset:0;
