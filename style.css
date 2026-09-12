@@ -474,8 +474,8 @@ body.cursor-active .cursor-dot, body.cursor-active .cursor-ring{ opacity:1; }
    TEAM
    ========================================================================== */
 .team{ background: var(--gray-100); padding: 120px 0; }
-.team-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 26px; }
-.team-card{ text-align:center; }
+.team-grid{ display:flex; flex-wrap:wrap; justify-content:center; gap: 26px; }
+.team-card{ text-align:center; flex: 0 0 calc((100% - 78px)/4); max-width: calc((100% - 78px)/4); }
 .team-photo{
   position:relative; width:100%; aspect-ratio: 4/5; overflow:hidden;
   border-radius: var(--radius-md); margin-bottom: 18px;
@@ -852,7 +852,7 @@ body.cursor-active .cursor-dot, body.cursor-active .cursor-ring{ opacity:1; }
   .services-grid{ grid-template-columns: repeat(2,1fr); }
   .service-card:nth-child(7):last-child{ grid-column: auto; }
   .why-grid{ grid-template-columns: repeat(2,1fr); }
-  .team-grid{ grid-template-columns: repeat(2,1fr); }
+  .team-card{ flex-basis: calc((100% - 26px)/2); max-width: calc((100% - 26px)/2); }
   .process-steps{ grid-template-columns: repeat(2,1fr); row-gap: 40px; }
   .process-line{ display:none; }
   .process-steps{ margin-top:0; }
@@ -892,6 +892,7 @@ body.cursor-active .cursor-dot, body.cursor-active .cursor-ring{ opacity:1; }
 
   .team{ padding: 80px 0; }
   .team-grid{ gap: 18px; }
+  .team-card{ flex-basis: calc((100% - 18px)/2); max-width: calc((100% - 18px)/2); }
 
   .services{ padding: 80px 0; }
   .services-first{ padding-top: 128px; }
