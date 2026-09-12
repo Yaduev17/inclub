@@ -1,13 +1,8 @@
-/* ==========================================================================
-   Inclub Digital Solution — interactions
-   ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---------- year ---------- */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- custom cursor (desktop, fine pointer only) ---------- */
   const cursorDot = document.getElementById('cursorDot');
   const cursorRing = document.getElementById('cursorRing');
   if (cursorDot && cursorRing && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
@@ -39,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- sticky header shadow state ---------- */
   const header = document.getElementById('header');
   const onScrollHeader = () => {
     if (window.scrollY > 12) header.classList.add('scrolled');
@@ -48,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
   onScrollHeader();
   window.addEventListener('scroll', onScrollHeader, { passive: true });
 
-  /* ---------- mobile hamburger menu ---------- */
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
 
@@ -73,7 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', closeMobileMenu);
   });
 
-  /* ---------- smooth scroll for in-page links ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       const id = anchor.getAttribute('href');
@@ -87,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- active nav link by current page ---------- */
   const navLinks = document.querySelectorAll('[data-nav], [data-nav-mobile]');
   const currentFile = location.pathname.split('/').pop() || 'index.html';
   const currentPage = currentFile.replace(/\.html$/, '') || 'index';
@@ -96,7 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
     link.classList.toggle('active', href === currentPage);
   });
 
-  /* ---------- back to top ---------- */
   const backToTop = document.getElementById('backToTop');
   const toggleBackToTop = () => backToTop.classList.toggle('show', window.scrollY > 500);
   toggleBackToTop();
@@ -107,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollTop(); }
   });
 
-  /* ---------- scroll reveal (IntersectionObserver) ---------- */
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const revealObserver = new IntersectionObserver((entries, obs) => {
@@ -124,7 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach(el => el.classList.add('in-view'));
   }
 
-  /* ---------- animated counters ---------- */
   const counters = document.querySelectorAll('[data-count]');
   const animateCounter = (el) => {
     const target = parseInt(el.getAttribute('data-count'), 10) || 0;
@@ -155,7 +143,6 @@ document.addEventListener('DOMContentLoaded', () => {
     counters.forEach(animateCounter);
   }
 
-  /* ---------- hero floating particles ---------- */
   const particleField = document.getElementById('heroParticles');
   if (particleField) {
     const count = window.innerWidth < 700 ? 14 : 26;
@@ -173,7 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ---------- portfolio filtering ---------- */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -191,7 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- vision parallax ---------- */
   const visionBg = document.getElementById('visionBg');
   const visionSection = document.querySelector('.vision');
   if (visionBg && visionSection) {
@@ -207,7 +192,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', onParallax, { passive: true });
   }
 
-  /* ---------- contact form validation ---------- */
   const form = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
 
